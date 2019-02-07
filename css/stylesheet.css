@@ -6,7 +6,7 @@ body{
 
 nav{
     background-color: black;
-    decoration: none;}
+}
 
 ul{
     padding:3% 10%;
@@ -33,3 +33,20 @@ background-color: #009688;
 .block:nth-child(even){
     background-color: #ffeb3bbf;
 }
+
+#scrolltotop{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    right: 100px;
+    height: 7%;
+    width: 4%;
+    bottom: 100px;
+    background-color: black;
+    color: white;
+    font-size: 3em;
+    border-radius: 66%;
+    align-items: center;
+    opacity: 0;
+}
+
