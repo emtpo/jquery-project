@@ -23,7 +23,9 @@ a{
 }
 
 .block{
-    height: 210px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
 
 }
 
@@ -52,10 +54,58 @@ background-color: #009688;
 }
 
 .fixNavigation{
-    height: 9%;
+    height: 11%;
     position: fixed;
+    z-index: 999;
 }
 
 .fixNav{
     padding: 1.5% 10%;
+}
+
+.slidesshow-container{
+    max-width: 500px;
+    position: relative;
+    margin-top: 3%;
+}
+
+.text{
+    position: absolute;
+    bottom: 85px;
+    color: aliceblue;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+}
+
+img{
+    max-width: 475px;
+}
+
+.prev, .next{
+    position: absolute;
+    top: 40%;
+    color: aliceblue;
+    font-size: 60px;
+}
+
+.prev:hover, .next:hover{
+    cursor: pointer;
+    color: rgb(84, 139, 139);
+}
+
+.prev{
+    left: 0.7%;
+}
+
+.next{
+    right: 0.7%;
+}
+
+.slides{
+    display: none;
+}
+
+.active{
+    display: block;
 }

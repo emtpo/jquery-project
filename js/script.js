@@ -34,3 +34,35 @@ $(function () {
         }
     });
 });
+
+var slideIndex = 0;
+var slides = $(".slides")
+
+showSlide(slideIndex);
+
+function showSlide(NumberSlide){
+    let idSlide = slides[NumberSlide].id;
+    $(".slides").removeClass("active");
+    $(`#${idSlide}`).addClass("active");
+}
+
+$(".arrow").on("click", function(){
+
+
+    //si prev: console.log(prev)
+    if($(this).hasClass("prev")){
+        slideIndex--;
+        if(slideIndex < 0){
+            slideIndex = slides.length -1;}
+        console.log(slideIndex);
+        showSlide(slideIndex)};
+        
+    
+    //si next: console.log(next)
+    if($(this).hasClass("next")){
+        slideIndex++;
+        if(slideIndex > slides.length -1){
+            slideIndex=0;
+        }
+        showSlide(slideIndex)};
+})
