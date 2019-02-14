@@ -154,7 +154,7 @@ p{
 
 p:hover { 
   cursor:pointer; 
-  background: rgb(156, 156, 156)146, 143, 143); 
+  background: rgb(156, 156, 156); 
   color:#eee; }
 
 .tile img {
@@ -197,4 +197,10 @@ p:hover {
 ::-moz-focus-inner {
   border: 0;
   padding: 0;
+}
+
+#mapid { 
+    height: 90%;
+    width: 85%;
+    margin-top: 2%;
 }

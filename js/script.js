@@ -40,43 +40,54 @@ var slides = $(".slides")
 
 showSlide(slideIndex);
 
-function showSlide(NumberSlide){
+function showSlide(NumberSlide) {
     let idSlide = slides[NumberSlide].id;
     $(".slides").removeClass("active");
     $(`#${idSlide}`).addClass("active");
 }
 
-$(".arrow").on("click", function(){
+$(".arrow").on("click", function () {
 
 
     //si prev: console.log(prev)
-    if($(this).hasClass("prev")){
+    if ($(this).hasClass("prev")) {
         slideIndex--;
-        if(slideIndex < 0){
-            slideIndex = slides.length -1;}
-        console.log(slideIndex);
-        showSlide(slideIndex)};
-        
-    
-    //si next: console.log(next)
-    if($(this).hasClass("next")){
-        slideIndex++;
-        if(slideIndex > slides.length -1){
-            slideIndex=0;
+        if (slideIndex < 0) {
+            slideIndex = slides.length - 1;
         }
-        showSlide(slideIndex)};
+        console.log(slideIndex);
+        showSlide(slideIndex)
+    };
+
+
+    //si next: console.log(next)
+    if ($(this).hasClass("next")) {
+        slideIndex++;
+        if (slideIndex > slides.length - 1) {
+            slideIndex = 0;
+        }
+        showSlide(slideIndex)
+    };
 })
 
-$(function() {
+$(function () {
     var selectedClass = "";
-    $(".fil-cat").click(function(){ 
-    selectedClass = $(this).attr("data-rel"); 
- $("#portfolio").fadeTo(100, 0.1);
-    $("#portfolio div").not("."+selectedClass).fadeOut().removeClass('scale-anm');
-setTimeout(function() {
-  $("."+selectedClass).fadeIn().addClass('scale-anm');
-  $("#portfolio").fadeTo(300, 1);
-}, 300); 
-    
+    $(".fil-cat").click(function () {
+        selectedClass = $(this).attr("data-rel");
+        $("#portfolio").fadeTo(100, 0.1);
+        $("#portfolio div").not("." + selectedClass).fadeOut().removeClass('scale-anm');
+        setTimeout(function () {
+            $("." + selectedClass).fadeIn().addClass('scale-anm');
+            $("#portfolio").fadeTo(300, 1);
+        }, 300);
+
+    });
 });
-});
+
+var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZW10cG8iLCJhIjoiY2pzMzF4ZWRyMGNjaDN5bnhsMGs3MnY1ciJ9.dW4gM9jjO084j4D5tByI4g', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 12,
+    id: 'mapbox.streets',
+    accessToken: 'your.mapbox.access.token'
+}).addTo(mymap);
